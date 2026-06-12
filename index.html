@@ -112,6 +112,43 @@ nav a:hover::after { transform: scaleX(1); }
 }
 .btn-ghost:hover { background: var(--c3); border-color: var(--c); }
 
+/* ── HERO ── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 168px 56px 100px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.3em;
+  color: var(--orange); text-transform: uppercase; margin-bottom: 28px;
+  animation: rise 0.6s ease both;
+}
+.hero-title {
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6.5vw, 4.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 44px;
+  animation: rise 0.6s ease both; animation-delay: 0.08s;
+}
+.hero-title .x { color: var(--c); font-weight: 300; padding: 0 0.15em; }
+.hero-title .accent { color: var(--c); text-shadow: 0 0 30px rgba(255,26,26,0.45); }
+.hero-logo-frame {
+  display: inline-block;
+  background: #ffffff;
+  padding: 22px 40px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 50px rgba(255,26,26,0.25);
+  animation: rise 0.6s ease both; animation-delay: 0.16s;
+}
+.hero-logo-frame img { display: block; max-width: 100%; width: 420px; height: auto; }
+.hero-cta-row {
+  margin-top: 44px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  animation: rise 0.6s ease both; animation-delay: 0.24s;
+}
+
 /* ── LAYOUT ── */
 .section { position: relative; z-index: 1; padding: 96px 56px; max-width: 1200px; margin: 0 auto; }
 .sec-label {
@@ -215,6 +252,12 @@ footer {
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+@media (max-width: 720px) {
+  .hero { padding: 140px 24px 70px; }
+  .hero-logo-frame { padding: 16px 24px; }
+  .hero-logo-frame img { width: 280px; }
+}
 </style>
 </head>
 <body>
@@ -233,7 +276,22 @@ footer {
   <a href="#register" class="nav-cta">Register</a>
 </header>
 
-<div class="section" id="about" style="padding-top:120px;">
+<div class="hero">
+  <div class="hero-eyebrow">Microsoft KL Office · 20 October 2026</div>
+  <h1 class="hero-title">
+    CGC<span class="x">×</span>Microsoft<br/>
+    <span class="accent">Agent-Thon 2026</span>
+  </h1>
+  <div class="hero-logo-frame">
+    <img src="https://ssarahalsagoff.github.io/cgc-ms-agentthon-site/image/logo.png" alt="CGC x Microsoft Agent-Thon 2026 Logo"/>
+  </div>
+  <div class="hero-cta-row">
+    <a href="#register" class="btn btn-fill">Register Now</a>
+    <a href="#about" class="btn btn-ghost">Learn More</a>
+  </div>
+</div>
+
+<div class="section" id="about">
   <div class="sec-label">01 — About</div>
   <h2 class="sec-title">What is <span>Agent-Thon</span>?</h2>
   <div class="about-layout">
